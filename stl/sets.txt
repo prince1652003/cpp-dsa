@@ -1,0 +1,45 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+void print_set(set<string> &s){
+  for(auto i : s){
+    cout<<i<<endl;
+  }
+}
+
+
+int main(){
+#ifndef ONLINE_JUDGE
+freopen("input.txt","r", stdin);
+freopen("output.txt", "w", stdout);
+#endif
+
+  set<string> s;
+
+  s.insert("asdf"); // log(n)
+  s.insert("erty");
+  s.insert("cvbn");
+  s.insert("bnmk");
+
+   auto it =s.find("asdf"); // log(n)
+  if(it != s.end()){
+    cout<<(*it);
+  }
+  if(it != s.end()){
+    s.erase(it);
+  }
+  cout<<endl<<endl<<endl<<endl;
+  print_set(s);
+  cout<<endl;
+   for( auto it = s.begin();it!= s.end();it++){
+    cout<<(*it)<<endl;
+   }
+   cout<<endl;
+  
+  set<string> :: iterator p;
+  for(  p = s.begin();p!= s.end();p++){
+    cout<<(*p)<<endl;
+   }
+
+
+}

@@ -1,0 +1,79 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+char convert_lowercase(char ch){
+    
+        if((ch>='a' && ch<='z')||(ch>='0' && ch<='9')){
+            return ch;
+        }
+        else{
+            char t = ch - 'A' + 'a';
+            return t;
+        }
+}
+
+bool faltu_char( char ch){
+    if((ch >= 'a' && ch <= 'z')||(ch >= 'A' && ch <= 'Z')){
+        return 1;
+    }
+    else{
+        return 0;
+    }
+}
+
+void palindrome(string d){
+    int s=0;
+    int e=d.length()-1;
+    int flag=0;
+    while(s<e){
+        if(d[s]!= d[e]){
+            cout<<"not palindrome"<<endl;
+            flag=1;
+            break;
+        }
+        s++;
+        e--;
+    }
+    if(flag==0){
+        cout<<"palindrome"<<endl;
+    }
+}
+
+
+
+int main(){
+
+#ifndef ONLINE_JUDGE
+freopen("input.txt","r", stdin);
+freopen("output.txt", "w", stdout);
+#endif
+
+string s ;
+
+
+getline(cin,s);
+
+
+ string temp = "";
+ 
+    for (int i = 0; i < s.length() ; ++i)
+    {
+        if(faltu_char(s[i])){
+            temp.push_back(s[i]);
+        }
+    }
+
+      // lower case
+
+    for (int i = 0; i < temp.length(); ++i)
+    {
+        temp[i] = convert_lowercase(temp[i]);
+    }
+
+    palindrome(temp);
+
+
+
+       return 0;
+
+}

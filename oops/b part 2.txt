@@ -1,0 +1,50 @@
+#include <bits/stdc++.h>
+#include "2.cpp"
+using namespace std;
+
+
+
+int main(){
+
+
+    student s1;
+    student *s2= new student;
+
+    s1.setage(20);
+    s2->setage(30);
+
+    s1.display();
+    s2->display();
+ 
+ 
+return 0;
+}
+
+  
+
+//
+
+#include <bits/stdc++.h>
+using namespace std;
+
+class student{
+
+    int age;
+
+public:
+    int rollno;
+    void display(){
+        cout<<age<<" "<<rollno<<endl;
+    }
+
+    int getage(){
+        return age;
+    }
+
+    void setage( int a){
+        age =a;
+    }
+
+    
+};
+

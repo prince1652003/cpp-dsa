@@ -1,0 +1,35 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+
+
+int main()
+{
+    string s;
+    string s1="prince";
+    string s2="kumar";
+    //getline(cin,s);
+    s=s1+s2;
+    cout<<s;
+    
+    cout<<s.length();
+    cout<<endl;
+    cout<<s.substr(5)<<endl;
+    cout<<s.substr(5,3)<<endl;
+    cout<<s.find("k");
+
+    int a =2345;
+    string str=to_string(a);
+    str[3] ='9';
+    str.push_back('4');
+    cout<<endl<<str;
+
+   
+    
+
+
+return 0;
+}
+
+ 
+  

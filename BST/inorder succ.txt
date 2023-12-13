@@ -1,0 +1,17 @@
+Node* inordersucc(Node* root,int x){
+   
+   Node* successor=NULL;
+
+   while(root!=NULL){
+    if(x->val >= root->val){
+        root=root->right;
+    }
+    else{
+        sucessor=root;
+        root=root->left;
+    }
+   }
+
+   return sucessor;
+
+}

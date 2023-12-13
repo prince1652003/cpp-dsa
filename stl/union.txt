@@ -1,0 +1,47 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+
+
+
+int main(){
+
+#ifndef ONLINE_JUDGE
+freopen("input.txt","r", stdin);
+freopen("output.txt", "w", stdout);
+#endif
+
+set<int>a;
+set<int>b;
+set<int>c;
+ 
+
+int t;
+cin>>t;
+while(t--){
+  int i;
+  cin>>i;
+  a.insert(i);
+}
+int z;
+cin>>z;
+while(z--){
+  int j;
+  cin>>j;
+  b.insert(j);
+}
+for(auto x= a.begin();x != a.end() ;x++){
+  c.insert(*x);
+}
+
+for(auto x= b.begin();x != b.end() ;x++){
+  c.insert(*x);
+}
+
+for(auto x= c.begin();x != c.end() ;x++){
+  cout<< * x <<" ";
+}
+
+       return 0;
+
+}

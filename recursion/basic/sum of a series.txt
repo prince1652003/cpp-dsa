@@ -1,0 +1,21 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+double gsum(int k){
+    if(k==0){
+        return 1;
+    }
+    return gsum(k-1)+1.0/pow(2,k);
+}
+int main(){
+    int k;
+    cin>>k;
+    
+    cout<<gsum(k);
+
+return 0;
+}
+
+// 1+ 1/2 +1/2^2 +1/2^k find the sun of this series
+
+  

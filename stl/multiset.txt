@@ -1,0 +1,32 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+void print_multiset(multiset<string> &s){
+  for(auto i : s){
+    cout<<i<<endl;
+  }
+}
+
+
+int main(){
+#ifndef ONLINE_JUDGE
+freopen("input.txt","r", stdin);
+freopen("output.txt", "w", stdout);
+#endif
+
+  multiset<string> s;
+
+  s.insert("asdf"); // log(n)
+  s.insert("erty");
+  s.insert("cvbn");
+  s.insert("bnmk");
+  s.insert("asdf");
+
+  auto it =s.find("asdf"); // log(n)
+  if(it != s.end()){
+    s.erase(it);   // delete only one value 
+  }
+  s.erase("asdf"); //delte all values
+  print_multiset(s);
+
+  }

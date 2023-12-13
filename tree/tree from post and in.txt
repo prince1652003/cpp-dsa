@@ -1,0 +1,36 @@
+int find_position(int inorder[],int element,int n){
+
+        for(int i=0;i<n;i++){
+            if(inorder[i]==element){
+                return i;
+            }
+        }
+        return -1;
+}
+Node* solve(int postorder[], int inorder[],int &postindex,int inindexstart,int inindexend,int n){
+
+        if(postindex <0 || inindexstart > inindexend ){
+            return NULL;
+        }
+
+        int element =postorder[postindex--];
+        Node* root= new Node(element);
+
+        int position= find_position(inorder,element,n);
+        
+        
+        root->right=solve(postorder,inorder,postindex,position+1,inindexend,n);
+        root->left=solve(postorder,inorder,postindex,inindexstart,position-1,n);
+        
+
+        return root;
+
+}
+Node *buildTree(int inorder[], int postorder[], int n) {
+    // Your code here
+        int postindex=n-1;
+
+        Node* ans=solve(postorder,inorder,postindex,0,n-1,n);
+
+        return ans;
+}

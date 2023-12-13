@@ -1,0 +1,92 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+
+class TrieNode{
+	public :
+	char data;
+	TrieNode* children[26];
+	bool isterminal;
+
+	TrieNode(char ch){
+		data =ch;
+		for(int i=0;i<26;i++){
+			children[i]=NULL;
+		}
+		isterminal=false;
+	}
+};
+class Trie{
+	public:
+
+	TrieNode* root;
+
+	Trie(){
+		root= new TrieNode('\0');
+	}
+
+	void insertutil(TrieNode* root,string word){
+
+		if(word.length()==0){
+			root->isterminal=true;
+			return;
+		}
+		// assumption all will be in cap letter
+
+		int index = word[0]-'A';
+		TrieNode* child;
+
+		//present case
+		if(root->children[index] !=NULL){
+			child=root->children[index];
+		}
+		//absent
+		else{
+			child = new TrieNode(word[0]);
+			root->children[index]=child;
+		}
+
+		insertutil(child,word.substr(1));
+	}
+
+	void insertword(string word){
+		insertutil(root,word);
+	}
+
+	bool searchutil(TrieNode* root,string word){
+		if(word.length()==0){
+			return root->isterminal;
+		}
+
+		int index= word[0]-'A';
+		TrieNode* child;
+
+		if(root->children[index]!=NULL){
+			child=root->children[index];
+		}
+		else{
+			return false;
+		}
+
+		return searchutil(root,word.substr(1));
+
+	}
+
+	bool search( string word){
+		return searchutil(root,word);
+
+	}
+};
+ 
+ 
+
+int main(){
+
+	Trie *t = new Trie();
+	t->insertword("ASDF");
+	cout<<"present or not "<< t->search("ASDF")<<endl;
+
+	
+
+	return 0;
+}

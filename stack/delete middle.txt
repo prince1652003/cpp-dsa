@@ -1,0 +1,25 @@
+#include <bits/stdc++.h> 
+
+void solve(stack<int>&element,int count , int N){
+
+    if(count==N/2){
+      element.pop();
+      return;
+   }
+
+   int num= element.top();
+   element.pop();
+
+   solve(element,count+1,N);
+
+   element.push(num);
+
+}
+
+
+void deleteMiddle(stack<int>&element, int N){
+
+   int count=0;
+
+   solve(element,count,N);  
+}

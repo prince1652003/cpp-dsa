@@ -1,0 +1,69 @@
+#include <bits/stdc++.h>
+#include "2.cpp"
+using namespace std;
+
+
+
+int main(){
+
+    // creating object statically
+    student s1;
+    student s2;
+    student s3,s4,s5;
+
+    //creating object dynamically
+    
+    student *s6 = new student;
+
+    //s1.age=24;
+    s1.rollno=100;
+
+    s1.display();
+    s2.display();
+
+    cout<<"s1 age :"<<s1.getage()<<endl;
+    cout<<"s2 age :"<<s2.getage()<<endl;
+
+    cout<<s1.rollno<<endl;
+
+    
+    (*s6).rollno=200;
+    (*s6).display();
+    s6->display();
+    cout<<"s6:"<<s6->getage()<<endl;
+
+  
+
+ 
+return 0;
+}
+
+  
+
+
+
+/// in another file
+
+#include <bits/stdc++.h>
+using namespace std;
+
+class student{
+
+public:
+    int rollno;
+
+private:
+    int age;
+
+public:
+    void display(){
+        cout<<age<<" "<<rollno<<endl;
+    }
+
+    int getage(){
+        return age;
+    }
+
+    
+};
+

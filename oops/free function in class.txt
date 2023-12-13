@@ -1,0 +1,5 @@
+// free function in class 
+// default constructors
+// copy constructors
+// copy assignment operator
+// destructors

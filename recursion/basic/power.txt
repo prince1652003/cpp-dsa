@@ -1,0 +1,25 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int pow(int n, int x){
+    //base case
+    if(n==0){
+        return 1;
+    }
+    return x*pow(n-1,x);
+   
+}
+int main(){
+    int n;
+    cin>>n;
+    int x;
+    cin>>x;
+
+     
+cout<<pow(n,x);
+
+return 0;
+}
+
+
+  

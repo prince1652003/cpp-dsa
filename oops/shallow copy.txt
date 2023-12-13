@@ -1,0 +1,36 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+
+class student{
+	int age;
+	char *name;
+
+	public :
+	    
+		student(int age , char*name){
+			this->age=age;
+			this->name=name;
+		}
+		void print(){
+			cout<<name<<" "<<age<<endl;
+		}
+};
+
+
+
+ 
+int main(){
+
+	char name[]="bhebnr";
+	student s1(20,name);
+	s1.print();
+
+	name[3]='w';
+	student s2(30,name);
+	s2.print();
+	s1.print();
+	
+
+	return 0;
+}

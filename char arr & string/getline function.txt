@@ -1,0 +1,16 @@
+#include <bits/stdc++.h>
+#include<cstring>
+using namespace std;
+
+
+
+int main()
+{   char a[100];
+
+     //cin.getline(a,20);
+     cin.getline(a,20,'e');
+     cout<<a;
+    
+  
+       return 0;
+}

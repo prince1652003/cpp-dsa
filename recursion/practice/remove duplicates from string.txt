@@ -1,0 +1,23 @@
+string removeDuplicate(string &s)
+{
+    int n= s.size();
+    
+    if(n<2){
+        return s;
+    }
+
+    if(s[n-1]==s[n-2]){
+        
+        s.pop_back();
+        
+        return removeDuplicate(s);
+    }
+    else{
+        
+        char last=s.back();
+        
+        s.pop_back();
+        
+        return removeDuplicate(s)+last;
+    }
+}

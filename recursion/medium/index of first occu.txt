@@ -1,0 +1,35 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+int first_index(int a[],int n,int k,int i){
+	if(i==n){
+		return -1;
+	}
+	if(a[i]==k){
+		return i ;
+	}
+	return first_index(a,n-1,k,i+1);
+	
+	
+}
+
+ 
+int main(){
+	int n;
+	cin>>n;
+	int a[n];
+
+	for (int i = 0; i < n; i++)
+	{
+		cin>>a[i];
+	}
+	int k;
+	cin>>k;
+	int i=0;
+	cout<<first_index(a,n,k,i);
+	
+
+
+    
+	return 0;
+}

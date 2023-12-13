@@ -1,0 +1,24 @@
+int get_size(char a[]){
+    int count = 0;
+    for (int i = 0; a[i] !='\0'; i++)
+    {
+        count++; 
+    }
+    return count;
+}
+
+int main(){
+
+#ifndef ONLINE_JUDGE
+freopen("input.txt","r", stdin);
+freopen("output.txt", "w", stdout);
+#endif
+
+char a[100];
+cin>>a;
+
+
+cout<<get_size(a);
+       return 0;
+
+}

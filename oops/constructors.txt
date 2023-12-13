@@ -1,0 +1,72 @@
+#include <bits/stdc++.h>
+#include "2.cpp"
+using namespace std;
+
+
+
+int main(){
+
+    student s1;
+    s1.display();
+
+    student s2;
+    s2.display();
+
+    student *s3=new student;
+    s3->display();
+
+    student s4(40);
+    s4.display();
+
+return 0;
+}
+
+
+// properties of constructors 
+// same name as class 
+// no return type 
+// no input type
+// 1 object 1 cinstructor will be called
+// constructors initialise the every object with the default values
+  
+
+********************************************************************************************************************************
+#include <bits/stdc++.h>
+using namespace std;
+
+class student{
+
+    int age;
+
+public:
+
+    /// default constructor
+    student (){
+        cout<<"constructors called"<<endl;
+    }
+
+     
+     // parameterised constructor
+     student(int r){
+        cout<<"constructor 2 called"<<endl;
+        rollno=r;
+     }
+
+    int rollno;
+
+    void display(){
+        cout<<age<<" "<<rollno<<endl;
+    }
+
+    int getage(){
+        return age;
+    }
+
+    void setage( int a){
+        age =a;
+    }
+
+    
+};
+
+

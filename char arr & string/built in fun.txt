@@ -1,0 +1,28 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+
+
+int main()
+{
+
+char a[100];
+char b[100];
+
+//builtin function in string and array
+
+//strlen(a);
+//strcmp(a,b);
+
+
+//strcpy(c,a);   c is destination string this functions also copy null char eg(a,b,c,0\,0\)
+
+//strncpy(c,a,n);  copy the n number of char
+
+
+//strcat(a,b);
+return 0;
+}
+
+ 
+  

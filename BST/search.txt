@@ -1,0 +1,16 @@
+bool searchinbst(Node* root,int x){
+    Node* temp=root;
+
+    while(temp != NULL){
+        if(root->data==x){
+            return true;
+        }
+        if(root->data > x){
+            temp=temp->left;
+        }
+        else{
+            temp=temp->right;
+        }
+    }
+    return false;
+}

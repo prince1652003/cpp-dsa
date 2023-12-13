@@ -1,0 +1,43 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+void print_map(map<int ,string>m){
+
+ 
+  for(auto i : m){
+    cout<<i.first<<" "<<i.second<<endl;
+  }
+}
+
+
+int main(){
+
+#ifndef ONLINE_JUDGE
+freopen("input.txt","r", stdin);
+freopen("output.txt", "w", stdout);
+#endif
+
+map<int,string>m;
+m[1]="abc";// complexity is O(log n)
+m[2]="sdf";
+m[3]="sdf";
+m["asdf"]="asdf"// complexity is s.size() * O(log n)
+m.insert({4,"vbn"});
+
+auto it = m.find(2);
+if(it!=m.end()){
+   m.erase(it);
+}
+
+
+if(it == m.end()){
+  cout<<"NO value"<<endl;
+}
+else{
+  cout<<(*it).first<<" "<<(*it).second<<endl;
+}
+m.clear();
+print_map(m);
+       return 0;
+
+}

@@ -1,0 +1,58 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int value(char r)
+{
+    if (r == 'I')
+        return 1;
+    if (r == 'V')
+        return 5;
+    if (r == 'X')
+        return 10;
+    if (r == 'L')
+        return 50;
+    if (r == 'C')
+        return 100;
+    if (r == 'D')
+        return 500;
+    if (r == 'M')
+        return 1000;
+ 
+    return -1;
+}
+
+int romanToInt(string &s) {
+    int sum =0;
+    for (int i = 0 ; i <s.size() ; i++)
+    {
+        int s1= value(s[i]);
+        if(i+1<s.size()){
+            int s2=value(s[i+1]);
+            if(s1>=s2){
+                sum=sum+s1;
+            }
+            else{
+                sum+=s2-s1;
+                i++;
+            }
+            
+        }else{
+        sum+=s1;
+        }
+       
+    }
+    return sum;
+}
+
+int main()
+{
+    string s;
+    cin>>s;
+    cout<<romanToInt(s);
+  
+    
+return 0;
+}
+
+ 
+  

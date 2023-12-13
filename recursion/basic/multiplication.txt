@@ -1,0 +1,21 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int multiply(int n,int m){
+    if(n==0){
+        return 0;
+    }
+    return multiply(n-1,m)+m;
+}
+int main(){
+    int n;
+    cin>>n;
+    int m;
+    cin>>m;
+    cout<<multiply(n,m);
+
+return 0;
+}
+
+
+  

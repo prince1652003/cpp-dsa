@@ -1,0 +1,55 @@
+class Solution {
+  public:
+  
+          int countnodes(struct Node* root){
+              
+              if(root==NULL){
+                  return 0;
+              }
+              return countnodes(root->left) + countnodes(root->right)+1; 
+          }
+  
+          bool cbt(struct Node* root, int index,int cnt){
+              
+              if(root==NULL){
+                  return true;
+              }
+              if(index>=cnt){
+                  return false;
+              }
+              
+              bool left= cbt(root->left,2*index+1,cnt);
+              bool right= cbt(root->right,2*index+2,cnt);
+              
+              return (left && right);
+          }
+  
+          bool ismaxorder(struct Node* root){
+              
+              if(root->right==NULL && root->left==NULL){
+                  return  true;
+              }
+              if(root->right==NULL){
+                  return(root->data >root->left->data);
+              }
+              else{
+                  bool left= ismaxorder(root->left);
+                  bool right= ismaxorder(root->right);
+                  
+                  return (left && right &&(root->data >root->left->data && root->data >root->right->data));
+              }
+          }
+      
+  
+    bool isHeap(struct Node* root) {
+        int index=0;
+        int totalcount=countnodes(root);
+        
+        if(cbt(root,index,totalcount) && ismaxorder(root)){
+            return true;
+        }
+        else{
+            return false;
+        }
+    }
+};

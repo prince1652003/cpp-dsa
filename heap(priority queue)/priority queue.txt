@@ -1,0 +1,24 @@
+priority_queue<int> pq;  //( max heap)
+
+	pq.push(4);
+	pq.push(5);
+	pq.push(6);
+	pq.push(2);
+
+	cout<<endl;
+	cout<<pq.top();
+	cout<<endl;
+
+	priority_queue<int, vector<int>,greater<int>>minheap;
+
+	minheap.push(6);
+	minheap.push(2);
+	minheap.push(7);
+	minheap.push(1);
+
+	
+	cout<<minheap.top();
+	cout<<endl;
+	 
+
+	

@@ -1,0 +1,36 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+void first_index(int a[],int n,int k,int i){
+
+	if(i==n){
+		return;
+	}
+	if(a[i]==k){
+		cout<<i<<" ";
+	}
+	first_index(a,n,k,i+1);
+	
+	
+}
+
+ 
+int main(){
+	int n;
+	cin>>n;
+	int a[n];
+
+	for (int i = 0; i < n; i++)
+	{
+		cin>>a[i];
+	}
+	int k;
+	cin>>k;
+	int i=0;
+	first_index(a,n,k,i);
+	
+
+
+    
+	return 0;
+}

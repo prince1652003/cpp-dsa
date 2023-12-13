@@ -1,0 +1,14 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main()
+{
+     char a[100];
+     cin>>a;
+     a[2]='\0';
+     a[3]='d';
+     a[4]='e';
+     cout<<a;
+       return 0;
+}
+

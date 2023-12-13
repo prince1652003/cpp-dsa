@@ -1,0 +1,91 @@
+vector<int> reverse(vector<int>v){
+    int s = 0;
+    int e = v.size()-1;
+
+    while(s<e){
+        swap(v[s++],v[e--]);
+    }
+    return v;
+}
+vector <int>sum_of_array(vector<int>&a,vector<int>&b,int n,int m){
+   int i= n-1;
+   int j= m-1;
+   int carry=0;
+   vector<int>v;
+
+   while(i>=0 && j>=0){
+    int sum= a[i]+b[j]+carry;
+    carry=sum/10;
+    sum=sum%10;
+    v.push_back(sum);
+    j--;
+    i--;
+   }
+
+   while(i>=0){
+    int sum = a[i] + carry;
+    carry=sum/10;
+    sum=sum%10;
+    v.push_back(sum);
+    i--;
+   }
+   while(j>=0){
+    int sum = b[j] + carry;
+    carry=sum/10;
+    sum=sum%10;
+    v.push_back(sum);
+    j--;
+   }
+   while(carry!=0){
+    int sum = carry;
+    v.push_back(sum);
+   }
+   reverse(v);
+   for (int i = v.size()-1; i >= 0; i--)
+   {
+       cout<<v[i];
+   }
+   return v;
+}
+
+
+
+int main(){
+
+#ifndef ONLINE_JUDGE
+freopen("input.txt","r", stdin);
+freopen("output.txt", "w", stdout);
+#endif
+
+vector<int>v1;
+vector<int>v2;
+int n;
+int m;
+int t;
+cin>>t;
+while(t--){
+cin>>n;
+cin>>m;
+for (int i = 0; i < n; ++i)
+{
+    int x;
+    cin>>x;
+    v1.push_back(x);
+}
+for (int i = 0; i < m; ++i)
+{
+    int y;
+    cin>>y;
+    v2.push_back(y);
+}
+
+sum_of_array(v1,v2,n,m);
+
+cout<<endl;
+}
+
+
+
+       return 0;
+
+}

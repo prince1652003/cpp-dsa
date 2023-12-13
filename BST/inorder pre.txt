@@ -1,0 +1,18 @@
+
+Node* inorderpre(Node* root,int x){
+   
+   Node* predecessor=NULL;
+
+   while(root!=NULL){
+    if(x->val >= root->val){
+        predecessor=root;
+        root=root->right;
+    }
+    else{
+        root=root->left;
+    }
+   }
+
+   return predecessor;
+
+}

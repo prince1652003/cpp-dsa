@@ -1,0 +1,24 @@
+class Solution {
+    
+     int height(Node* node){
+
+        if(node==NULL){
+            return 0;
+        }
+        return 1+max(height(node->left),height(node->right));
+    }
+  public:
+    
+    int diameter(Node* root) {
+         if(root==NULL){
+            return 0;
+        }
+
+        int lef=diameter(root->left);
+        int righ=diameter(root->right);
+        int n = height(root->left)+height(root->right)+1;
+
+        return max(n,max(righ,lef));
+
+    }
+};

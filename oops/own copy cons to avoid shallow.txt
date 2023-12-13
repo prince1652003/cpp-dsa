@@ -1,0 +1,47 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+
+class student{
+	int age;
+
+	public :
+	
+	    char *name;
+
+		student(student &s){
+			this->age = s.age;
+			/// this->name = s.name; /// shallow copy
+
+			/// deep copy
+			this->name = new char[strlen(s.name)+1];
+			strcpy(this->name,s.name);
+		}
+	    
+		student(int age , char*name){
+			this->age=age;
+			this->name= new char[strlen(name)+1];
+			strcpy(this->name,name);
+		}
+		void print(){
+			cout<<name<<" "<<age<<endl;
+		}
+};
+
+
+
+ 
+int main(){
+
+	char name[]="bhebnr";
+	student s1(20,name);
+	s1.print();
+
+	
+	student s2(s1);
+	s2.print();
+	
+	
+
+	return 0;
+}
